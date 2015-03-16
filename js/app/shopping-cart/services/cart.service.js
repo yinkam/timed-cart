@@ -4,6 +4,7 @@ angular.module('ShoppingCart')
 	
 	var count =0;
 	var cart = {};
+	var total_amount = 0;
 		
 
 	return {
@@ -40,10 +41,13 @@ angular.module('ShoppingCart')
 		},
 
 		//get total amount of items in cart
-		total: function(carts){
-			angular.forEach(bought, function(value, key){
-				
-			}, purchase);
+		total: function(){
+			total_amount =0;
+			angular.forEach(cart, function(value, key){
+				total_amount += value.product.price *value.incart;
+			});
+			
+			return total_amount;
 		},
 
 
@@ -55,6 +59,7 @@ angular.module('ShoppingCart')
 		reset: function(){
 			cart ={};
 			count = 0;
+			total = 0;
 		}		
 	};
 })

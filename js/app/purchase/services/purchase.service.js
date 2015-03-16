@@ -12,7 +12,7 @@ angular.module('Purchase')
 		//add items from cart to purchased, reset cart when sucessfull
 		add: function(carts){
 			var bought = carts;				
-			angular.forEach(bought, function(value, key){
+			angular.forEach(bought, function(value, key){				
 				this.push(value);
 			}, purchase);
 			CartService.reset();			

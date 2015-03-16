@@ -24,5 +24,10 @@ angular.module("ShoppingCart")
 		CartService.remove(product);
 	};
 
+	$scope.getTotal = function(){
+		return CartService.total();
+
+	};
+
 });
 
