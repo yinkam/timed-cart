@@ -1,0 +1,80 @@
+
+.container{
+	width: 90%;
+	margin: 0 auto;
+	text-align: : center;
+	padding-top: 40px;
+
+}
+.inventory{
+	text-align: center;
+	width: 60%;	
+	padding: 10px ;
+	float: left;
+}
+.checkout{
+	width: 35%;
+	padding: 10px;
+	position: fixed;
+	right: 50px;	
+	background-color: white;
+}
+.cart{
+	width: 100%;
+	margin-bottom: 40px;
+}
+.items{	
+	
+	width: 300px;		
+	margin: 10px;
+	float: left;
+}
+.price{
+	width: 80px;
+	height: 30px;
+	float: left;
+	background-color: #F44336;
+	color: white;
+	padding: 10px;
+	z-index: 3;
+}
+
+img{
+	width: 100%;
+	
+}
+.purchased{
+	width: 100%;
+}
+button{
+	margin: 10px;
+}
+
+table{	
+	
+	padding: 10px;
+	width: 100%;
+}
+p{
+	padding: 10px;
+}
+
+tr{	
+	border: 1px solid #CCCCCC;
+}
+tr:nth-child(odd){
+	background-color: #EEEEEE;
+}
+td{	
+	padding: 5px;
+}
+
+td:nth-child(2), td:nth-child(3), td:nth-child(4){
+	text-align: right;
+}
+th{
+	padding: 10px;
+	background-color: #CCCCCC;
+	border: 1px solid #CCCCCC;
+	
+}

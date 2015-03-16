@@ -1,0 +1,14 @@
+<md-toolbar class="md-primary">
+    <h1 class="md-toolbar-tools">
+      <span>Inventory</span>
+    </h1>
+</md-toolbar>
+
+<md-card class='items' layout="column" ng-repeat="item in inventory.items">
+	<img ng-src="{{item.images}}" alt="Washed Out">
+	<md-card-content flex flex-order="3">		
+		<h3>{{item.name}}</h3>
+		<md-subheader class="md-primary"><b>{{item.price | currency:"₦"}}</b></md-subheader>
+		<md-button class="md-raised md-accent" ng-hide="item.quantity <= 0" ng-click="add(item)">Add to Cart</md-button>						
+	<md-card-content>
+</md-card>
