@@ -9,7 +9,6 @@ bower will install all angular dependencies including:
 * Angular
 * Angular-aria
 * Angular-animate
-* The ng-Draggable module has not been integrated yet and can be skipped.
 
 The application will need to be hosted in a simple http server for it to run properly.
 
