@@ -1,5 +1,5 @@
 //This service manages data from cart to purchased
-angular.module('ShoppingCart')
+angular.module('Purchase')
 
 .factory('PurchaseService', function(CartService){
 	var purchase = [];

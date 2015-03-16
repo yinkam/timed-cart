@@ -1,1 +1,1 @@
-angular.module('ShoppingCart',[])
+angular.module('ShoppingCart',['Purchase'])
