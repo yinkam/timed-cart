@@ -1,4 +1,5 @@
 (function(){
+	//this is the main app module
 	angular.module("app", ["ngMaterial","ShoppingCart","Inventory"])		
 	
 	//Material design theme config
