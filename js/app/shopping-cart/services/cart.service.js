@@ -6,7 +6,7 @@ angular.module('ShoppingCart')
 	var cart = {};
 		
 
-	return{
+	return {
 		//get items from cart
 		get: function(){
 			return cart;		
@@ -35,7 +35,7 @@ angular.module('ShoppingCart')
 				if(cart[item.id].incart ===0){
 					delete cart[item.id];						
 				}
-				count--;
+				count--; //subtract count only when item quantity is 0
 			}				
 		},
 
