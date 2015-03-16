@@ -84,11 +84,11 @@
 								<td>{{products.incart}}</td>
 								<td>{{products.product.price * products.incart| currency: ""}}</td>						
 								<td>
-									<md-button class="md-warn" ng-click="removeProduct(products.product)">X</md-button>						
+									<md-button class="md-warn" ng-click="removeProduct(products.product)">X</md-button>					
 								</td>
 							</tr>
 							<tr>
-								<td><b>Total: </b></td>
+								<td><b>Total</b></td>
 								<td></td>
 								<td></td>
 								<td><b>{{getTotal()| currency: "₦"}}</b><td>
