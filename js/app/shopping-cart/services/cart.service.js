@@ -7,23 +7,28 @@ angular.module('ShoppingCart')
 		
 
 	return{
+		//get items from cart
 		get: function(){
 			return cart;		
 		},		
 
+		// add an item to cart
 		add: function(item){
+			//check if item already in cart and increment quantity
 			if (cart[item.id]){
 				cart[item.id].incart +=1;
 			}
+			//add new item to cart
 				else{
 					cart[item.id] ={
 						product: item,
 						incart: 1,
 					}
 				}	
-			count++;			
+			count++; //keep track of number of items in cart			
 		},
 
+		//remove item from cart
 		remove: function(item){
 			if (cart[item.id]){
 				cart[item.id].incart -=1;
@@ -34,16 +39,19 @@ angular.module('ShoppingCart')
 			}				
 		},
 
+		//get total amount of items in cart
 		total: function(carts){
 			angular.forEach(bought, function(value, key){
 				
 			}, purchase);
 		},
 
+
 		count: function(){
 			return count;
 		},	
 
+		//reset cart and tracker
 		reset: function(){
 			cart ={};
 			count = 0;

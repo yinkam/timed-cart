@@ -4,6 +4,7 @@ angular.module("ShoppingCart")
 
 .controller('PurchaseController', function($scope, CartService, PurchaseService){	
 	
+	//get items from purchased
 	$scope.getPurchase = function(){
 		return PurchaseService.get();
 	};
