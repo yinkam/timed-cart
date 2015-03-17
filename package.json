@@ -1,0 +1,19 @@
+{
+  "name": "timed-cart",
+  "version": "1.0.0",
+  "description": "Timed shopping cart",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andela-ymakanjuola/timed-cart.git"
+  },
+  "author": "yinka.makanjuola@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela-ymakanjuola/timed-cart/issues"
+  },
+  "homepage": "https://github.com/andela-ymakanjuola/timed-cart"
+}
