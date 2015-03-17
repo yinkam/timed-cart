@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="cDT">
+	<head>
+		<title>Angular CDT trial</title>
+		<meta charset="utf-8" />
+	</head>
+	<body ng-controller="timerController as cdt">
+		{{cdt.timeStr()}}
+		<button ng-click="cdt.startTimer(2)">Start Timer</button>
+		<script src="angular.js"></script>
+		<script src="cDTimer.js"></script>
+		<script src="timerService.js"></script>
+	</body>
+</html>
