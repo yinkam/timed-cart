@@ -23,7 +23,9 @@
 	width: 100%;
 	margin-bottom: 40px;
 }
-.items{		
+.items{	
+	width: 200px;
+	height: 400px;	
 	margin: 10px;
 	float: left;
 }

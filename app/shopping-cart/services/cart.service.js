@@ -1,6 +1,6 @@
 angular.module('ShoppingCart')
 
-.factory('CartService',function(){		
+.factory('CartService',function(timerService){		
 	
 	var count =0;
 	var cart = {};
@@ -26,7 +26,11 @@ angular.module('ShoppingCart')
 						incart: 1,
 					}
 				}	
-			count++; //keep track of number of items in cart			
+			count++; //keep track of number of items in cart
+			
+				timerService.startTimer(.5);
+			
+			
 		},
 
 		//remove item from cart

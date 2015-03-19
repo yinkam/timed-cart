@@ -2,7 +2,7 @@
 
 angular.module("timer")
 
-	.factory("timerService", function ( $window, $timeout ) {
+	.factory("timerService", function ( $rootScope, $timeout ) {
 
 		var time;
 
@@ -24,7 +24,8 @@ angular.module("timer")
 		var tick = function () {
 
 			if (time <= 0) {
-				$window.alert("time is up");
+
+				$rootScope.$broadcast('TimeUp');
 				return;
 			}
 			time -= 1;
@@ -43,6 +44,7 @@ angular.module("timer")
 				updateTimer();
 
 				$timeout(tick, 1000);
+
 
 			},
 

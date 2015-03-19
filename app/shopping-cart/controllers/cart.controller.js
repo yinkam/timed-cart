@@ -2,7 +2,7 @@
 
 angular.module("ShoppingCart")
 
-.controller('CartController', function($scope, CartService, PurchaseService){		
+.controller('CartController', function($scope, timerService, CartService, PurchaseService){		
 	
 	// get all items in cart
 	$scope.getCart = function(){
@@ -28,6 +28,14 @@ angular.module("ShoppingCart")
 		return CartService.total();
 
 	};
+
+	$scope.getTimer = function(){
+		return timerService.timeStr();
+	};
+
+	$scope.$on('TimeUp', function(){
+		CartService.reset();
+	});
 
 });
 

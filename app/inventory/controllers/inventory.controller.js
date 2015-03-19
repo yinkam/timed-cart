@@ -14,4 +14,12 @@ angular.module("Inventory")
 	$scope.add = function(item){
 		CartService.add(item); 	
 	};
+
+	$scope.hoverIn=function(){
+		this.showButton = true;
+	};
+
+	$scope.hoverOut=function(){
+		this.showButton = false;
+	};
 });

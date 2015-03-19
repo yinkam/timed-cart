@@ -25,6 +25,7 @@
 	    <script type="text/javascript" src="app/shopping-cart/shoppingcart.module.js"></script>
 	    <script type="text/javascript" src="app/inventory/inventory.module.js"></script>
 	    <script type="text/javascript" src="app/purchase/purchase.module.js"></script>
+	    <script type="text/javascript" src="app/timer/timer.module.js"></script>
 
 
 	     <!--Controllers-->
@@ -36,6 +37,7 @@
 	   	<script type="text/javascript" src="app/inventory/services/inventory.service.js"></script>
 		<script type="text/javascript" src="app/shopping-cart/services/cart.service.js"></script>
 	    <script type="text/javascript" src="app/purchase/services/purchase.service.js"></script>
+	    <script type="text/javascript" src="app/timer/services/timer.service.js"></script>
 	    
 
 	    <!--Directives-->
@@ -70,6 +72,7 @@
 				  	</md-toolbar>
 				  	<md-card>
 					  	<md-content style="max-height: 200px">
+					  		<md-subheader class="md-warn" ng-show="count()>0">{{getTimer()}}</md-subheader>	
 							<md-subheader ng-hide="count()>0">Your Cart is empty</md-subheader>						
 							<table ng-show="count()>0">
 								<tr>
