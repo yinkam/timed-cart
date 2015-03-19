@@ -70,7 +70,7 @@
 				  	</md-toolbar>
 				  	<md-card>
 					  	<md-content style="max-height: 200px">
-							<p ng-hide="count()>0">Your Cart is empty</p>						
+							<md-subheader ng-hide="count()>0">Your Cart is empty</md-subheader>						
 							<table ng-show="count()>0">
 								<tr>
 									<th>Item</th>
@@ -109,7 +109,7 @@
 
 				  	<md-card style="max-height: 200px">
 					  	<md-content style="max-height: 200px">
-							<p ng-show="getPurchase().length === 0">You have not bought any item</p>
+							<md-subheader ng-show="getPurchase().length === 0">You have not bought any item</md-subheader>
 							
 							<table ng-hide="getPurchase().length === 0">
 								<tr>
