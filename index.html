@@ -69,31 +69,33 @@
 					    <md-button class="md-raised md-accent" ng-show="count()>0" ng-click="addtoPurchased()">Checkout</md-button>
 				  	</md-toolbar>
 				  	<md-card>
-						<p ng-hide="count()>0">Your Cart is empty</p>						
-						<table ng-show="count()>0">
-							<tr>
-								<th>Item</th>
-								<th>Price</th>
-								<th>QTY</th>
-								<th>Sub Total</th>									
-								<th></th>
-							</tr>
-							<tr ng-repeat="products in getCart()">
-								<td>{{products.product.name}}</td>
-								<td>{{products.product.price | currency: ""}}</td>
-								<td>{{products.incart}}</td>
-								<td>{{products.product.price * products.incart| currency: ""}}</td>						
-								<td>
-									<md-button class="md-warn" ng-click="removeProduct(products.product)">X</md-button>					
-								</td>
-							</tr>
-							<tr>
-								<td><b>Total</b></td>
-								<td></td>
-								<td></td>
-								<td><b>{{getTotal()| currency: "₦"}}</b><td>
-							</tr>
-						</table>
+					  	<md-content style="max-height: 200px">
+							<p ng-hide="count()>0">Your Cart is empty</p>						
+							<table ng-show="count()>0">
+								<tr>
+									<th>Item</th>
+									<th>Price</th>
+									<th>QTY</th>
+									<th>Sub Total</th>									
+									<th></th>
+								</tr>
+								<tr ng-repeat="products in getCart()">
+									<td>{{products.product.name}}</td>
+									<td>{{products.product.price | currency: ""}}</td>
+									<td>{{products.incart}}</td>
+									<td>{{products.product.price * products.incart| currency: ""}}</td>						
+									<td>
+										<md-button class="md-warn" ng-click="removeProduct(products.product)">X</md-button>					
+									</td>
+								</tr>
+								<tr>
+									<td><b>Total</b></td>
+									<td></td>
+									<td></td>
+									<td><b>{{getTotal()| currency: "₦"}}</b><td>
+								</tr>
+							</table>
+						</md-content>
 					<md-card>
 				</div>
 
@@ -105,24 +107,26 @@
 					    </h1>
 				  	</md-toolbar>
 
-				  	<md-card>
-						<p ng-show="getPurchase().length === 0">You have not bought any item</p>
-						
-						<table ng-hide="getPurchase().length === 0">
-							<tr>
-								<th>Item</th>
-								<th>Price</th>
-								<th>QTY</th>
-								<th>Sub Total</th>
-							</tr>
-							<tr ng-repeat="items in getPurchase()">
-								<td>{{items.product.name}}</td>
-								<td>{{items.product.price | currency: ""}}</td>
-								<td>{{items.incart}}</td>
-								<td>{{items.product.price * items.incart| currency: ""}}</td>				
-							</tr>
-						</table>
-					<md-card>
+				  	<md-card style="max-height: 200px">
+					  	<md-content style="max-height: 200px">
+							<p ng-show="getPurchase().length === 0">You have not bought any item</p>
+							
+							<table ng-hide="getPurchase().length === 0">
+								<tr>
+									<th>Item</th>
+									<th>Price</th>
+									<th>QTY</th>
+									<th>Sub Total</th>
+								</tr>
+								<tr ng-repeat="items in getPurchase()">
+									<td>{{items.product.name}}</td>
+									<td>{{items.product.price | currency: ""}}</td>
+									<td>{{items.incart}}</td>
+									<td>{{items.product.price * items.incart| currency: ""}}</td>				
+								</tr>
+							</table>
+						</md-content>
+					</md-card>
 
 				</div>
 
