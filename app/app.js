@@ -2,7 +2,7 @@
 
 (function(){
 	//this is the main app module
-	angular.module("app", ["ngMaterial","ShoppingCart","Inventory","Purchase"])		
+	angular.module("app", ["ngMaterial","ShoppingCart","Inventory","Purchase","timer"])		
 	
 	//Material design theme config
 	.config(function($mdThemingProvider) {

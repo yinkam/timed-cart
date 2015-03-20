@@ -2,7 +2,7 @@
 
 angular.module("timer")
 
-	.factory("timerService", function ( $window, $timeout ) {
+	.factory("timerService", function ( $rootScope, $timeout ) {
 
 		var time;
 
@@ -13,18 +13,19 @@ angular.module("timer")
 		};
 
 		var updateTimer = function() {
-			var seconds = time,
-				minutes = Math.floor(seconds / 60);
-			seconds -= minutes * 60;
+			var seconds = time;
 			var	hours = Math.floor(seconds / 3600);
 			seconds -= hours * 3600;
-			me.timeStr = leadingZero(hours) + " : " + leadingZero(minutes) + " : " + leadingZero(seconds);
+			var minutes = Math.floor(seconds / 60);
+			seconds -= minutes * 60;
+			me.timeStr = leadingZero(hours) + " hrs " + leadingZero(minutes) + " mins " + leadingZero(seconds) + " secs";
 		};
 
 		var tick = function () {
 
 			if (time <= 0) {
-				$window.alert("time is up");
+
+				$rootScope.$broadcast('TimeUp');
 				return;
 			}
 			time -= 1;
@@ -43,6 +44,7 @@ angular.module("timer")
 				updateTimer();
 
 				$timeout(tick, 1000);
+
 
 			},
 

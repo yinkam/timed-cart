@@ -25,6 +25,7 @@
 	    <script type="text/javascript" src="app/shopping-cart/shoppingcart.module.js"></script>
 	    <script type="text/javascript" src="app/inventory/inventory.module.js"></script>
 	    <script type="text/javascript" src="app/purchase/purchase.module.js"></script>
+	    <script type="text/javascript" src="app/timer/timer.module.js"></script>
 
 
 	     <!--Controllers-->
@@ -36,6 +37,7 @@
 	   	<script type="text/javascript" src="app/inventory/services/inventory.service.js"></script>
 		<script type="text/javascript" src="app/shopping-cart/services/cart.service.js"></script>
 	    <script type="text/javascript" src="app/purchase/services/purchase.service.js"></script>
+	    <script type="text/javascript" src="app/timer/services/timer.service.js"></script>
 	    
 
 	    <!--Directives-->
@@ -61,16 +63,25 @@
 
 			<md-content class="checkout">
 
+				<!-- ///////////////// Cart Section ////////////////////-->
 				<div class="cart" ng-controller="CartController">
 					<md-toolbar class="md-theme-light">
 					    <h1 class="md-toolbar-tools">
 					      <span>Cart</span>	
+					      <span flex></span>
+					      <span style="text-align: right"><b>{{getTotal()| currency: "₦"}}</b></span>
 					    </h1>
-					    <md-button class="md-raised md-accent" ng-show="count()>0" ng-click="addtoPurchased()">Checkout</md-button>
+					    <md-button class="md-raised md-accent" ng-show="count()>0" ng-click="showConfirm($event)">Checkout</md-button>
 				  	</md-toolbar>
 				  	<md-card>
-					  	<md-content style="max-height: 200px">
-							<p ng-hide="count()>0">Your Cart is empty</p>						
+					  	<md-content style="max-height: 250px">
+
+							<md-subheader> 
+								<span ng-hide="count()>0">Your Cart is empty</span>
+								<span style="md-warn" ng-show="count()>0">Items in your cart will be stored for 
+								<b>{{getTimer()}}</b></span>
+							</md-subheader>	
+
 							<table ng-show="count()>0">
 								<tr>
 									<th>Item</th>
@@ -99,6 +110,8 @@
 					<md-card>
 				</div>
 
+				<!--/////////////////Purchased Section ////////////////////-->
+
 				<div class="purchased" ng-controller="PurchaseController as purchase">
 					
 					<md-toolbar class="md-theme-light">
@@ -107,9 +120,9 @@
 					    </h1>
 				  	</md-toolbar>
 
-				  	<md-card style="max-height: 200px">
+				  	<md-card style="max-height: 250px">
 					  	<md-content style="max-height: 200px">
-							<p ng-show="getPurchase().length === 0">You have not bought any item</p>
+							<md-subheader ng-show="getPurchase().length === 0">You have not bought any item</md-subheader>
 							
 							<table ng-hide="getPurchase().length === 0">
 								<tr>

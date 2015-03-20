@@ -26,7 +26,9 @@ angular.module('ShoppingCart')
 						incart: 1,
 					}
 				}	
-			count++; //keep track of number of items in cart			
+			count++; //keep track of number of items in cart
+			
+			
 		},
 
 		//remove item from cart
