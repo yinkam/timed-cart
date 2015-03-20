@@ -2,7 +2,7 @@
 
 angular.module("ShoppingCart")
 
-.controller('CartController', function($scope, timerService, CartService, PurchaseService){		
+.controller('CartController', function($scope, $mdDialog, timerService, CartService, PurchaseService){		
 	
 	// get all items in cart
 	$scope.getCart = function(){
@@ -39,6 +39,23 @@ angular.module("ShoppingCart")
 	$scope.$on('TimeUp', function(){
 		CartService.reset();
 	});
+
+	//confirm dialog before purchase
+	$scope.showConfirm = function(ev) {
+    var confirm = $mdDialog.confirm()
+     
+      .title('Are you sure you want to purchase these items?')
+      .ariaLabel('Lucky day')
+      .ok('Purchase')
+      .cancel('Back To Cart')
+      .targetEvent(ev);
+    $mdDialog.show(confirm).then(function() {
+      //add items from cart to purchased on confirm
+      PurchaseService.add(CartService.get());
+    }, function() {
+      
+    });
+  };
 
 });
 

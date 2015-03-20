@@ -71,7 +71,7 @@
 					      <span flex></span>
 					      <span style="text-align: right"><b>{{getTotal()| currency: "₦"}}</b></span>
 					    </h1>
-					    <md-button class="md-raised md-accent" ng-show="count()>0" ng-click="addtoPurchased()">Checkout</md-button>
+					    <md-button class="md-raised md-accent" ng-show="count()>0" ng-click="showConfirm($event)">Checkout</md-button>
 				  	</md-toolbar>
 				  	<md-card>
 					  	<md-content style="max-height: 250px">
