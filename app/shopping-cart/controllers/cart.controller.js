@@ -24,15 +24,18 @@ angular.module("ShoppingCart")
 		CartService.remove(product);
 	};
 
+	//get total amount of items in cart
 	$scope.getTotal = function(){
 		return CartService.total();
 
 	};
 
+	//get timer string to be displayed in cart
 	$scope.getTimer = function(){
 		return timerService.timeStr();
 	};
 
+	//listen for TimeUp broadcast when timer ends and reset cart
 	$scope.$on('TimeUp', function(){
 		CartService.reset();
 	});

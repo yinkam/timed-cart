@@ -63,6 +63,7 @@
 
 			<md-content class="checkout">
 
+				<!-- ///////////////// Cart Section ////////////////////-->
 				<div class="cart" ng-controller="CartController">
 					<md-toolbar class="md-theme-light">
 					    <h1 class="md-toolbar-tools">
@@ -102,6 +103,8 @@
 					<md-card>
 				</div>
 
+				<!--///////////////// Purchased Section ////////////////////-->
+
 				<div class="purchased" ng-controller="PurchaseController as purchase">
 					
 					<md-toolbar class="md-theme-light">
@@ -112,7 +115,7 @@
 
 				  	<md-card style="max-height: 200px">
 					  	<md-content style="max-height: 200px">
-							<md-subheader ng-show="getPurchase().length === 0">You have not bought any item</md-subheader>
+							c ng-show="getPurchase().length === 0">You have not bought any item</md-subheader>
 							
 							<table ng-hide="getPurchase().length === 0">
 								<tr>

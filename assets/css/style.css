@@ -25,7 +25,7 @@
 }
 .items{	
 	width: 200px;
-	height: 400px;	
+	height: 405px;	
 	margin: 10px;
 	float: left;
 }
@@ -51,7 +51,7 @@ button{
 }
 
 table{	
-	
+	font-size: 14px;
 	padding: 10px;
 	width: 100%;
 }
@@ -73,7 +73,7 @@ td:nth-child(2), td:nth-child(3), td:nth-child(4){
 	text-align: right;
 }
 th{
-	padding: 10px;
+	padding: 5px;
 	background-color: #CCCCCC;
 	border: 1px solid #CCCCCC;
 	
