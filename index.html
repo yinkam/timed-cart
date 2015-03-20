@@ -68,13 +68,19 @@
 					<md-toolbar class="md-theme-light">
 					    <h1 class="md-toolbar-tools">
 					      <span>Cart</span>	
+					      <span flex></span>
+					      <span style="text-align: right"><b>{{getTotal()| currency: "₦"}}</b></span>
 					    </h1>
 					    <md-button class="md-raised md-accent" ng-show="count()>0" ng-click="addtoPurchased()">Checkout</md-button>
 				  	</md-toolbar>
 				  	<md-card>
-					  	<md-content style="max-height: 200px">
-					  		<md-subheader class="md-warn" ng-show="count()>0">{{getTimer()}}</md-subheader>	
-							<md-subheader ng-hide="count()>0">Your Cart is empty</md-subheader>						
+					  	<md-content style="max-height: 250px">
+
+							<md-subheader> 
+								<span ng-hide="count()>0">Your Cart is empty</span>
+								<span style="md-warn" ng-show="count()>0">Items in your cart will be stored for {{getTimer()}}</span>
+							</md-subheader>	
+
 							<table ng-show="count()>0">
 								<tr>
 									<th>Item</th>
@@ -113,7 +119,7 @@
 					    </h1>
 				  	</md-toolbar>
 
-				  	<md-card style="max-height: 200px">
+				  	<md-card style="max-height: 250px">
 					  	<md-content style="max-height: 200px">
 							<md-subheader ng-show="getPurchase().length === 0">You have not bought any item</md-subheader>
 							
