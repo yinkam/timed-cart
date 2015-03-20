@@ -18,7 +18,7 @@ angular.module("timer")
 			seconds -= hours * 3600;
 			var minutes = Math.floor(seconds / 60);
 			seconds -= minutes * 60;
-			me.timeStr = "HH: " leadingZero(hours) + "MM: " + leadingZero(minutes) + "SS: " + leadingZero(seconds);
+			me.timeStr = leadingZero(hours) + " hrs " + leadingZero(minutes) + " mins " + leadingZero(seconds) + " secs";
 		};
 
 		var tick = function () {
