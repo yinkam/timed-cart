@@ -103,7 +103,7 @@
 					<md-card>
 				</div>
 
-				<!--///////////////// Purchased Section ////////////////////-->
+				<!--/////////////////Purchased Section ////////////////////-->
 
 				<div class="purchased" ng-controller="PurchaseController as purchase">
 					
@@ -115,7 +115,7 @@
 
 				  	<md-card style="max-height: 200px">
 					  	<md-content style="max-height: 200px">
-							c ng-show="getPurchase().length === 0">You have not bought any item</md-subheader>
+							<md-subheader ng-show="getPurchase().length === 0">You have not bought any item</md-subheader>
 							
 							<table ng-hide="getPurchase().length === 0">
 								<tr>
