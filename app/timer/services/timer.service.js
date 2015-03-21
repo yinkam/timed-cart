@@ -4,16 +4,44 @@ angular.module("timer")
 
 	.factory("timerService", function ( $rootScope, $timeout ) {
 
-		var time;
+		var t;
 
 		var me = {};
 
+		//this is to enable time to display in two digits
 		var leadingZero = function (num) {
-			return (num < 10) ? "0" + num : + num;
+			return (num < 10) ? "0" + num : num;
 		};
 
-		var updateTimer = function() {
-			var seconds = time;
+		//displays the timer
+		var showTimer = function () {
+			var seconds = me.time;
+			var hours = Math.floor(seconds / 3600);
+			seconds -= hours * 3600;
+			var minutes = Math.floor(seconds / 60);
+			seconds -= minutes * 60;
+			me.timeStr = leadingZero(hours) + " hrs " + leadingZero(minutes) + " mins " + leadingZero(seconds) + " secs ";
+		};
+
+		//starts a timer with a duration set in minutes 
+		var startTimer = function () {
+			showTimer();
+			if (me.time === 0) {
+				$rootScope.$broadcast('TimeUp');
+			}
+			else {
+				me.time--;
+				t = $timeout(startTimer, 1000);	
+			}
+		};
+
+		//stops a preset timer
+		var stopTimer = function() {
+			$timeout.cancel(t);
+		};
+
+		/*var updateTimer = function() {
+			var seconds = me.time;
 			var	hours = Math.floor(seconds / 3600);
 			seconds -= hours * 3600;
 			var minutes = Math.floor(seconds / 60);
@@ -32,11 +60,11 @@ angular.module("timer")
 			updateTimer();
 			$timeout(tick, 1000);
 
-		};
+		};*/
 
 		return {
 
-			startTimer: function (duration) {
+			/*startTimer: function (duration) {
 
 				time = duration * 60;
 				time -= 1;
@@ -44,8 +72,14 @@ angular.module("timer")
 				updateTimer();
 
 				$timeout(tick, 1000);
+			},*/
 
-
+			timer: function(duration) {
+				me.time = duration * 60;
+				me.time -= 1;
+				stopTimer();
+				showTimer();
+				startTimer();
 			},
 
 			timeStr: function () {

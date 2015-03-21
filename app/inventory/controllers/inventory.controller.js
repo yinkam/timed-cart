@@ -13,7 +13,7 @@ angular.module("Inventory")
 	//add item clicked by user to cart and start timer	
 	$scope.add = function(item){
 		CartService.add(item); 
-		timerService.startTimer(120);
+		timerService.timer(3);
 	};
 
 	//mouse event on over 
