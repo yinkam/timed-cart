@@ -3,41 +3,47 @@
 		"id": 2, 
 		"name": "Eragon",
 		"images": "assets/images/eragon.jpg", 
-		"price": 500
+		"price": 500,
+		"instore": 10
 	},
 	
 	"2":{
 		"id": 3, 
 		"name": "The Two Towers",
 		"images": "assets/images/two-towers.jpg", 
-		"price": 200
+		"price": 200,
+		"instore": 10
 	},
 
 	"3":{
 		"id": 4, 
 		"name": "The Half Blood Prince",
 		"images": "assets/images/Half-Blood_Prince.jpg", 
-		"price": 200
+		"price": 200,
+		"instore": 10
 	},
 
 	"4":{
 		"id": 5, 
 		"name": "Divergent",
 		"images": "assets/images/divergent.jpg", 
-		"price": 500
+		"price": 500,
+		"instore": 10
 	},
 
 	"5":{
 		"id": 6, 
 		"name": "The Chamber of Secrets",
 		"images": "assets/images/Chamber_of_Secrets.jpg", 
-		"price": 200
+		"price": 200,
+		"instore": 10
 	},
 
 	"6":{
 		"id": 1, 
 		"name": "Game of Thrones",
 		"images": "assets/images/Game_of_thrones.jpeg", 
-		"price": 200
+		"price": 200,
+		"instore": 10
 	}					
 }

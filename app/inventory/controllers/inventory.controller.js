@@ -24,4 +24,8 @@ angular.module("Inventory")
 	$scope.hoverOut=function(){
 		this.showButton = false;
 	};
+
+	$scope.getCart = function(){
+		return CartService.get();
+	};
 });

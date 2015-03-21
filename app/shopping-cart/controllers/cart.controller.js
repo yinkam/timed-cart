@@ -22,6 +22,7 @@ angular.module("ShoppingCart")
 	//remove item from cart
 	$scope.removeProduct = function(product){
 		CartService.remove(product);
+
 	};
 
 	//get total amount of items in cart
@@ -42,20 +43,22 @@ angular.module("ShoppingCart")
 
 	//confirm dialog before purchase
 	$scope.showConfirm = function(ev) {
-    var confirm = $mdDialog.confirm()
-     
-      .title('Are you sure you want to purchase these items?')
-      .ariaLabel('Lucky day')
-      .ok('Purchase')
-      .cancel('Back To Cart')
-      .targetEvent(ev);
-    $mdDialog.show(confirm).then(function() {
-      //add items from cart to purchased on confirm
-      PurchaseService.add(CartService.get());
-    }, function() {
-      
-    });
-  };
+	    var confirm = $mdDialog.confirm()
+	     
+	      .title('Are you sure you want to purchase these items?')
+	      .ariaLabel('Lucky day')
+	      .ok('Purchase')
+	      .cancel('Back To Cart')
+	      .targetEvent(ev);
+	    $mdDialog.show(confirm).then(function() {
+
+			//move items from cart to purchased on confirm
+			PurchaseService.add(CartService.get());
+
+	    }, function() {
+	      
+	    });
+	 };
 
 });
 

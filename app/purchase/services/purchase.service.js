@@ -14,6 +14,10 @@ angular.module('Purchase')
 			var bought = carts;				
 			angular.forEach(bought, function(value, key){				
 				this.push(value);
+
+				//reduce number of items available for purchase on checkout
+				value.product.instore -= value.incart;
+				
 			}, purchase);
 			CartService.reset();			
 		},		
